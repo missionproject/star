@@ -153,7 +153,7 @@
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="add-busmgmt.html" class="sidebar-link">
+                                    <a href="add-bustype.html" class="sidebar-link">
                                         <i class="mdi mdi-email-secure"></i>
                                         <span class="hide-menu"> Add Bus Type </span>
                                     </a>
@@ -207,13 +207,13 @@
                             </a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item">
-                                    <a href="inbox-email.html" class="sidebar-link">
+                                    <a href="add-cancellation.html" class="sidebar-link">
                                         <i class="mdi mdi-email"></i>
                                         <span class="hide-menu"> Add New </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="inbox-email-detail.html" class="sidebar-link">
+                                    <a href="view-cancellation.html" class="sidebar-link">
                                         <i class="mdi mdi-email-alert"></i>
                                         <span class="hide-menu"> View All </span>
                                     </a>
@@ -221,24 +221,10 @@
                             </ul>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <a class="sidebar-link" href="booking.html" aria-expanded="false">
                                 <i class="icon-Mailbox-Empty"></i>
                                 <span class="hide-menu">Booking Detail </span>
                             </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="inbox-email.html" class="sidebar-link">
-                                        <i class="mdi mdi-email"></i>
-                                        <span class="hide-menu"> Add New </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="inbox-email-detail.html" class="sidebar-link">
-                                        <i class="mdi mdi-email-alert"></i>
-                                        <span class="hide-menu"> View All </span>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
@@ -247,13 +233,13 @@
                             </a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item">
-                                    <a href="inbox-email.html" class="sidebar-link">
+                                    <a href="add-pointdetails.html" class="sidebar-link">
                                         <i class="mdi mdi-email"></i>
                                         <span class="hide-menu"> Add New </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="inbox-email-detail.html" class="sidebar-link">
+                                    <a href="view-pointdetails.html" class="sidebar-link">
                                         <i class="mdi mdi-email-alert"></i>
                                         <span class="hide-menu"> View All </span>
                                     </a>
@@ -267,19 +253,25 @@
                             </a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item">
-                                    <a href="inbox-email.html" class="sidebar-link">
+                                    <a href="add-driver.html" class="sidebar-link">
                                         <i class="mdi mdi-email"></i>
                                         <span class="hide-menu"> Add New </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="inbox-email-detail.html" class="sidebar-link">
+                                    <a href="view-driver.html" class="sidebar-link">
                                         <i class="mdi mdi-email-alert"></i>
                                         <span class="hide-menu"> View All </span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="customer.html" aria-expanded="false">
+                                <i class="icon-Mailbox-Empty"></i>
+                                <span class="hide-menu">Customer </span>
+                            </a>
+                            </li>
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
@@ -310,6 +302,9 @@
                                     <li class="breadcrumb-item">
                                         <a href="#">Home</a>
                                     </li>
+                                    <li class="breadcrumb-item">
+                                        <a href="#">Route Details</a>
+                                    </li>
                                     <li class="breadcrumb-item active" aria-current="page">Add</li>
                                 </ol>
                             </nav>
@@ -334,42 +329,49 @@
                 </div>
                 <div id="zero_config_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="zero_config"></label></div> -->
                 <form>
-                        <div class="form-group">
-                          <label for="exampleFormControlInput1">Bus Name</label>
-                          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Bus Name">
+                    <div class="row">
+                        <div class="form-group-inline col">
+                          <label for="exampleFormControlInput1">Select Bus</label>
+                          <select name="" id="" class="form-control">
+                              <option value="">Delux</option>
+                              <option value=""></option>
+                              <option value=""></option>
+                          </select>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1">Bus Type</label>
+                        <div class="form-group-inline col">
+                            <label for="exampleFormControlInput1">Price</label>
                             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Bus Type">
                           </div>
-                          <div class="form-group">
-                              <label for="exampleFormControlInput1">Bus Register Number</label>
+                    </div>
+                    <div class="row">
+                          <div class="form-group-inline col">
+                              <label for="exampleFormControlInput1">From Place</label>
                               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Register number">
                             </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Maximum Seats</label>
+                            <div class="form-group-inline col">
+                                <label for="exampleFormControlInput1">To Place</label>
                                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Maximum Seats">
                               </div>
-                              <div class="form-group">
+                            </div>
+                            <div class="row">
+                              <div class="form-group-inline col">
                                   <label for="exampleFormControlInput1">Start Point</label>
-                                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Start Point">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">End Point</label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="End Point">
+                                  <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Start Point"> -->
+                                  <div class="input-group-append">
+                                    <div class="input-group-text"> <i class="mdi mdi-clock"></i></div>
+                                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Start Point">
                                   </div>
-                                  <div class="form-group">
-                                      <label for="exampleFormControlInput1">Start Time</label>
-                                      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Start Time">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlInput1">End Time</label>
-                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="End Time">
+                                
+                                </div>
+                                <div class="form-group-inline col">
+                                    <label for="exampleFormControlInput1">End Point</label>
+                                    <div class="input-group-append">
+                                        <div class="input-group-text"> <i class="mdi mdi-clock"></i></div>
+                                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="End Point">
                                       </div>
-                                      <div class="form-group">
-                                          <label for="exampleFormControlInput1">Amenities</label>
-                                          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Facilities">
-                                        </div>
+                                  </div>
+                                </div>
+                                <button class="btn btn-primary btn-rounded mt-2 float-right">Submit</button>
                       </form>
             </div>
         </div>
