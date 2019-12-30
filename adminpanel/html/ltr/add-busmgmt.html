@@ -14,7 +14,7 @@
     <!-- Custom CSS -->
     <link href="../../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="../../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
-    <link href="../../assets/libs/morris.js/morris.css" rel="stylesheet">
+    <!-- <link href="../../assets/libs/morris.js/morris.css" rel="stylesheet"> -->
     <!-- Custom CSS -->
     <link href="../../dist/css/style.min.css" rel="stylesheet">
 </head>
@@ -369,6 +369,7 @@
                                         <label class="checkbox-inline"><input type="checkbox" value="">Blankets</label>
                                       </div>
                                       <input type="button" id="btn1" value="submit" type="submit">
+                                      
                       </form>
             </div>
         </div>
@@ -376,20 +377,6 @@
 </div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script>
-		$(document).ready(function(){
-				$("#btn1").click(function(data){
-					$.get("http://localhost:8080/api/v2/bus", function(data, status){
-					 console.log(data);
-$("#bname").val(data.busName);
-$("#btype").val(data.busType);
-$("#mxseat").val(data.totalSeat);
-  });
-	});
-	   });	
-		
-	</script>
     <!-- All Jquery -->
     <!-- ============================================================== -->
     <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
@@ -418,9 +405,43 @@ $("#mxseat").val(data.totalSeat);
     <script src="../../assets/extra-libs/c3/c3.min.js"></script>
     <!--chartjs -->
     <script src="../../assets/libs/raphael/raphael.min.js"></script>
-    <script src="../../assets/libs/morris.js/morris.min.js"></script>
+    <!-- <script src="../../assets/libs/morris.js/morris.min.js"></script> -->
 
-    <script src="../../dist/js/pages/dashboards/dashboard1.js"></script>
+    <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
+
+	<script>
+		$(document).ready(function(){
+				$("#btn1").click(function(data){
+					$.get("http://localhost:8080/api/v2/bus", function(data, status){
+					 console.log(data);
+$("#bname").val(data[1].busName);
+$("#btype").val(data[1].busType);
+$("#mxseat").val(data[1].totalSeat);
+  });
+	});
+	   });	
+		
+    </script>
+    
+    <script type="text/javascript">  
+        $(document).ready(function () {  
+            $('#dataTable').DataTable({  
+                "ajax": {  
+                    "url": "/Home/GetData",  
+                    "type": "GET",  
+                    "datatype": "json"  
+                },  
+                "columns": [  
+                    { "data": "Name" },  
+                    { "data": "Position" },  
+                    { "data": "Office" },  
+                    { "data": "Age" },  
+                    { "data": "Salary" }  
+                ]  
+            });  
+        });           
+    </script> 
+
 </body>
 
 </html>
