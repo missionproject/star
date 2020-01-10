@@ -368,7 +368,17 @@
                                         <label class="checkbox-inline"><input type="checkbox" value="">Charging Point</label>
                                         <label class="checkbox-inline"><input type="checkbox" value="">Blankets</label>
                                       </div>
-                                      <input type="button" id="btn1" value="submit" type="submit">
+                                      <!-- <input type="button" id="btn1" value="submit" type="submit"> -->
+
+                                      <nav aria-label="Page navigation example" >
+                                        <ul class="pagination float-right">
+                                        <li class="page-item"><a class="page-link" href="#" id="btn1" >Previous</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                      </ul>
+                                    </nav>
                                       
                       </form>
             </div>
@@ -409,21 +419,46 @@
 
     <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
 
-	<script>
+	 <script>
+
 		$(document).ready(function(){
+            index=0;
 				$("#btn1").click(function(data){
+                 
 					$.get("http://localhost:8080/api/v2/bus", function(data, status){
+                       
 					 console.log(data);
-$("#bname").val(data[1].busName);
-$("#btype").val(data[1].busType);
-$("#mxseat").val(data[1].totalSeat);
+                    
+                     {    if(index>data.length-1){index=0;}
+                          $("#bname").val(data[index].busName);
+                          $("#btype").val(data[index].busType);
+                          $("#mxseat").val(data[index].totalSeat); 
+                     };
+                     index++;
+                    
+
   });
 	});
 	   });	
 		
     </script>
+
+
+<!-- <script>
+    $(document).ready(function(){
+        $("#btn1").click(function(data){
+		$.get("http://localhost:8080/api/v2/bus", function(data, status){
+		console.log(data);;
+        var fruitsArray = data;
+        $.each(fruitsArray, function(index, value){
+            $("#result").append(index + ": " + value.busName + '<br>');
+        });
+    });
+        });
+    });
+</script> -->
     
-    <script type="text/javascript">  
+    <!-- <script type="text/javascript">  
         $(document).ready(function () {  
             $('#dataTable').DataTable({  
                 "ajax": {  
@@ -440,7 +475,7 @@ $("#mxseat").val(data[1].totalSeat);
                 ]  
             });  
         });           
-    </script> 
+    </script>  -->
 
 </body>
 
